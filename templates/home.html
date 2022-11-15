@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Learning Model Prediction</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body style="background-color: darkgoldenrod;">
+    <div class="login">
+        <center>
+            <h1>Insurance Prediction</h1>
+            <form action="{{ url_for('predict')}}" method="post">
+                <label>Age</label>
+                <input type="text" name="Age" placeholder="Age" required="required" />
+                <br><br>
+                <label>Gender</label>
+                <select name="Gender" id="Gender">
+          <option value="1" id ="Gender">male</option>
+          <option value="0" id ="Gender">female</option>
+          <option value="3" id ="Gender">None</option>
+        </select>
+                <br><br>
+                <label>BMI</label>
+                <input type="text" name="bmi" placeholder="bmi" required="required" />
+                <br><br>
+                <label>Children</label>
+                <input type="text" name="Children" placeholder="Children" required="required" />
+                <br><br>
+                <label>Smoker</label>
+                <select name="Smoker" id="Smoker">
+          <option value="1" id ="Smoker">yes</option>
+          <option value="0" id ="Smoker">no</option>
+          <option value="3" id ="Smoker">None</option>
+        </select>
+                <br><br>
+                <label>Region</label>
+                <select name="Region" id="Region">
+          <option value="1" id ="Region">southeast</option>
+          <option value="2" id ="Region">southwest</option>
+          <option value="3" id ="Region">northeast</option>
+          <option value="4" id ="Region">northwest</option>
+        </select>
+                <br><br>
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+            <br>
+            <br> {{ prediction_text }}
+        </center>
+
+    </div>
+
+
+</body>
+
+</html>
