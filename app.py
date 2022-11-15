@@ -24,5 +24,5 @@ def predict():
     return render_template("home.html", prediction_text = "The insurance is {}".format(prediction))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
     
