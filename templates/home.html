@@ -21,7 +21,8 @@
             <h1>Insurance Prediction</h1>
             <form action="{{ url_for('predict')}}" method="post">
                 <label>Age</label>
-                <input type="text" name="Age" placeholder="Age" required="required" />
+                <input class="form-control" type="text" name="Age" placeholder="Age" required="required" />
+                
                 <br><br>
                 <label>Gender</label>
                 <select name="Gender" id="Gender">
@@ -31,10 +32,10 @@
         </select>
                 <br><br>
                 <label>BMI</label>
-                <input type="text" name="bmi" placeholder="bmi" required="required" />
+                <input class="form-control" type="text" name="bmi" placeholder="bmi" required="required" />
                 <br><br>
                 <label>Children</label>
-                <input type="text" name="Children" placeholder="Children" required="required" />
+                <input class="form-control" type="text" name="Children" placeholder="Children" required="required" />
                 <br><br>
                 <label>Smoker</label>
                 <select name="Smoker" id="Smoker">
