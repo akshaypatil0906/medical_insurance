@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Machine Learning Model Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Insurance prediction</title>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
@@ -13,6 +14,48 @@
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 
+    <style>
+        .box {
+            width: 120px;
+            height: 30px;
+            border: 2px solid #4CAF50;
+            font-size: 18px;
+            color: #000203;
+            background-color: rgb(255, 255, 255);
+            border-radius: 0px;
+            /*box-shadow: 4px 4px rgb(255, 255, 255);*/
+        }
+        
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 10px 58px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+        
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            background-color: #aafddf;
+            color: white;
+        }
+    </style>
 </head>
 
 <body style="background-color: lightblue;">
@@ -21,44 +64,46 @@
             <h1>Insurance Prediction</h1>
             <form action="{{ url_for('predict')}}" method="post">
                 <label>Age</label>
-                <input class="form-control" type="text" name="Age" placeholder="Age" required="required" />
-                
+                <input type="text" name="Age" placeholder="Age" required="required" />
                 <br><br>
                 <label>Gender</label>
-                <select name="Gender" id="Gender">
+                <select name="Gender" id="Gender" class="box">
           <option value="1" id ="Gender">male</option>
           <option value="0" id ="Gender">female</option>
           <option value="3" id ="Gender">None</option>
         </select>
                 <br><br>
                 <label>BMI</label>
-                <input class="form-control" type="text" name="bmi" placeholder="bmi" required="required" />
+
+                <input type="text" name="bmi" placeholder="bmi" required="required" />
                 <br><br>
                 <label>Children</label>
-                <input class="form-control" type="text" name="Children" placeholder="Children" required="required" />
+                <input type="text" name="Children" placeholder="Children" required="required" />
                 <br><br>
                 <label>Smoker</label>
-                <select name="Smoker" id="Smoker">
+                <select name="Smoker" id="Smoker" class="box">
           <option value="1" id ="Smoker">yes</option>
           <option value="0" id ="Smoker">no</option>
           <option value="3" id ="Smoker">None</option>
         </select>
                 <br><br>
                 <label>Region</label>
-                <select name="Region" id="Region">
+                <select name="Region" id="Region" class="box">
           <option value="1" id ="Region">southeast</option>
           <option value="2" id ="Region">southwest</option>
           <option value="3" id ="Region">northeast</option>
           <option value="4" id ="Region">northwest</option>
         </select>
                 <br><br>
-                <button type="submit" class="btn btn-outline-danger">Predict</button>
+                <button type="submit" class="button button1">Predict</button>
             </form>
             <br>
             <br> {{ prediction_text }}
         </center>
 
     </div>
+
+
 
 
 </body>
